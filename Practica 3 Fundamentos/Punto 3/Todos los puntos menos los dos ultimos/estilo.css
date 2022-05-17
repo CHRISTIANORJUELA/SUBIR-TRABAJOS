@@ -1,0 +1,97 @@
+
+/* Damos estilo al Body*/
+
+body{  
+    margin: 0px;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+} 
+
+/* Damos estilo a las las etiquetas
+ -h1
+ -h2
+ -p
+*/
+
+h1{
+    font-family:  Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:300;
+}
+
+h2{
+    font-family: tahoma,sans-serif;
+    font-weight: 200;
+    text-align: center;
+}
+
+p{
+    font-family: tahoma,sans-serif;
+}
+
+.div-encabezado{
+    background-image: url(https://aerolatinnews.com/wp-content/uploads/2014/06/Rio-de-Janeiro-2-e1412591512395.jpg);
+    background-size: contain;
+    z-index: 20;
+    height: 300px;
+    overflow: hidden;
+}
+
+.div-titulo-principal{
+    background-image: linear-gradient(rgba(74, 67, 67, 0.397),rgba(147, 142, 142, 0.397));
+    z-index: 1;
+    /* width: 600px; */
+    text-align: center;
+}
+
+
+.titulo-principal{
+    display: inline-block;
+    margin: 0px;
+    width: 190px;
+    
+}
+
+.aa{
+    display: inline-block;
+    font-family: Arial,sans-serif;
+    position: relative;
+    left: 200px;
+    top: -15px;
+    text-decoration: none;
+    color:rgba(0, 0, 0, 0.763);
+    margin-left: 5px;
+}
+
+.prueba-c{
+    background-color: aqua;
+    width: 400px;
+
+    text-align: center;
+    overflow: hidden;
+    margin-top: 30px;
+
+}
+
+.rd{
+    margin: 0px;
+    /* position:absolute;
+    top: 80px; */
+}
+
+.boton-1-c{
+    margin-left: 525px;
+}
+
+.div-principal{
+    width: 800px;
+    position: relative;
+    left: 270px;
+    top: 50px;
+    
+}
+
+.img-familia{
+    display: inline-block;
+    position: relative;
+    left: 60px;
+}

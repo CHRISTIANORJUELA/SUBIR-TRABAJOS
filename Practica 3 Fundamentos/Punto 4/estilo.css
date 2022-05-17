@@ -1,0 +1,47 @@
+body{
+    box-sizing: border-box;
+    margin: 0px;
+
+}
+
+h1,
+p,
+h2{
+    font-family: Tahoma,sans-serif;
+}
+
+.div-arriba{
+    background-image: linear-gradient(to top , rgb(227, 211, 28) , rgb(233, 240, 22));
+    overflow: hidden;
+    text-align: center;
+}
+
+main{
+    width: 700px;
+    position: relative;
+    top:100px;
+    left: 200px;
+    background-image: url(https://i.pinimg.com/736x/2b/d6/52/2bd652271702f7dd040d40509f76bfaa.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 100%;
+    
+}
+
+.input-d{
+    border-width: 5px;
+    border: gold ;
+    border-style:ridge;
+    outline: 8px ridge rgb(224, 211, 28);
+}
+
+.boton-enviar-c{
+    background-image: linear-gradient(to bottom , rgb(44, 243, 18) , rgba(19, 242, 45, 0.652) );
+    border-width: 3px;
+    border: gold ;
+    border-style:ridge;
+    outline: 8px ridge rgb(224, 211, 28);
+}
+
+
