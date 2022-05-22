@@ -1,0 +1,91 @@
+body{
+    box-sizing: border-box;
+    margin: 0px;
+
+}
+
+h1{
+    font-family: tahoma, arial, helvetica;
+    font-size: 2vw;
+    font-weight: 50;
+}
+h3{
+    font-family: tahoma, arial, helvetica;
+    font-weight: 50;
+}
+
+
+
+
+.div-titulo-principal{
+
+    text-align: center;
+    background-image: linear-gradient(to top , rgb(39, 201, 25) ,rgb(14, 165, 192));
+    overflow: hidden;
+}
+
+.titulo-principal{
+
+    font-size: 3vw;
+    font-family: Tahoma,sans-Serif;
+}
+
+.div-main{
+
+    text-align: center;
+    background-image: url(fondo-verde.webp);
+    overflow: hidden ;
+    background-size: contain;
+    padding: 40px;
+}
+
+.div-form{
+
+    background-image: linear-gradient( to right , rgba(38, 209, 22, 0.849) , rgb(24, 194, 180) );
+    max-width: 300px;
+    position: relative;
+    left: 35vw;
+    box-shadow: 5px , 5px , 5px black;
+}
+
+.div-form input{
+
+    background : none;
+    border-top: none;
+    border-left:none;
+    border-right:none;
+    border-bottom: black , 5px , solid;
+}
+
+.div-form button{
+    background-image: linear-gradient( to left, rgb(25, 181, 201), rgba(19, 230, 19, 0.863));
+    border : none;
+    height: 30px;
+
+}
+
+.inputs{
+
+width: 200px;
+height: 35px;
+}
+
+.div-funciones{
+    background-image: linear-gradient(to left , rgba(38, 209, 209) , rgb(32, 197, 76) );
+    width: max-content;
+    position: relative;
+    left: 30vw;
+}
+
+.div-funciones button{
+ background-image: linear-gradient( to left, rgb(25, 181, 201), rgba(19, 230, 19, 0.863));
+ border : none;
+}
+
+.div-funciones input{
+    background: none;
+    border-top: none;
+    border-left:none;
+    border-right:none;
+    border-bottom: black, 5px,solid;
+}

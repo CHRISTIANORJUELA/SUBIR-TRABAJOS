@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="div-titulo-principal">
+    <h1 class="titulo-principal">Almacen la Rebaja</h1>
+</div>
+    
+
+<div class="div-main">
+    <main>
+        <form action="#" class="div-form">
+
+            <div>
+                <h1>Categoria</h1>
+                <p>
+                    <input type="text" placeholder="Ingrese Categoria" id="idCategoria" class="inputs">
+                </p>
+            </div>
+            <div>
+                <h1>Producto</h1>
+                <p>
+                    <input type="text" placeholder="Ingrese el producto" id="idProducto" class="inputs">
+                </p>
+
+            </div>
+            <div>
+                <h1>Cantidad</h1>
+                <p>
+                    <input type="text" placeholder="Ingrese cantidad " id="idCantidad" class="inputs">
+                </p>
+
+
+            </div>
+
+            <div>
+                <h1>Precio</h1>
+                <p>
+                    <input type="text" placeholder="Ingrese Precio " id="idPrecio" class="inputs">
+                </p>
+
+            </div>
+            <div>
+
+                <button type="button" onclick="subir(event)">Ordenar</button>
+            </div>
+        </form>
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+        <div class="div-funciones">
+        <div>
+            <h3> Cuantos productos hay Por Categoría</h3>
+            <button type="button" onclick="informarCategoria(event)">Enviar</button>
+        </div>
+        <div class="f">
+
+            <h3> Cantidad total productos</h3>
+            <button type="button" onclick="cantidadProductos(event)">Enviar</button>
+            <input type="text" id="id-cantidadProducto">
+            
+        </div>
+        <div>
+
+            <h3> Valor total de los productos</h3>
+            <button type="button" onclick="valorProductos(event)">Enviar</button>
+            <input type="text" id="ID-valorProductos">
+                
+        </div>
+        <div>
+            <h3> Disminuir Existencias de un producto</h3>
+            <button type="button" onclick="disminuirExistencias(event)">Enviar</button>
+            <input type="text" placeholder="ingrese el nombre del producto" id="nombre-para-disminuir">
+            <input type="text" placeholder="ingrese cantidad de existencias a eliminar" id="existencias-disminuir">
+            
+        </div>
+
+        <div>
+            <h3> Aumentar Existencias de un producto</h3>
+            <button type="button" onclick="AumentarExistencias(event)">Enviar</button>
+            <input type="text" placeholder="ingrese el nombre del producto" id="nombre-para-aumentar">
+            <input type="text" placeholder="ingrese cantidad de existencias para aumentar" id="existencias-aumentar">
+
+        </div>
+
+        <div>
+
+            <h3> Buscar un producto por Nombre</h3>
+            <button type="button" onclick="buscarNombre(event)">Enviar</button>
+            <input type="text" placeholder="ingresa-nombre" id="nombre-buscar">
+
+        </div>
+
+        <div>
+            <h3> Eliminar un producto</h3>
+            <input type="text" placeholder="Digite el producto" id="eliminarProducto">
+            <button type="button" onclick="eliminarProducto(event)">Enviar</button>
+
+        </div>
+
+        <div>
+            <h3> Listar en Orden Alfabetico los productos</h3>
+            <button type="button" onclick="alfabeto(event)">Enviar</button>
+
+        </div>
+        <div>
+            <h3>Listar Poducto al Final</h3>
+            <input type="text" placeholder="ingrese el nombre" id="listar-Final">
+            <button type="button" onclick="listarFinal(event)">Enviar</button>
+        </div>
+        <div>
+            <h3>Listar Poducto al Principio</h3>
+            <input type="text" placeholder="ingrese el nombre" id="listarPrincipio">
+            <button type="button" onclick="listarPrincipio(event)">Enviar</button>
+
+
+        </div>
+
+        <div>
+
+            <button type="button" onclick="cargarLocal(event)">Guardar Cambios</button>
+        </div>
+    </div>
+
+
+
+    </main>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
