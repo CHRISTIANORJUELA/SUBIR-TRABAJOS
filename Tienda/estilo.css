@@ -57,12 +57,7 @@ h3{
     border-bottom: black , 5px , solid;
 }
 
-.div-form button{
-    /* background-image: linear-gradient( to left, rgb(25, 181, 201), rgba(19, 230, 19, 0.863)); */
-    /* height: 30px;
-    border: none; */
 
-}
 
 .inputs{
 
@@ -77,10 +72,7 @@ height: 35px;
     left: 30vw;
 }
 
-.div-funciones button{
- /* background-image: linear-gradient( to left, rgb(25, 181, 201), rgba(19, 230, 19, 0.863));
- border : none; */
-}
+
 
 .div-funciones input{
     background: none;
