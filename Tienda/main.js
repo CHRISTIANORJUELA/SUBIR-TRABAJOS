@@ -82,8 +82,7 @@ function cantidadProductos(event) {
     }
 
     let longitud = arrayCont.length;
-    console.log("la cantidad de productos es :"+longitud);
-
+   
     document.getElementById('id-cantidadProducto').value = longitud;
 
 }
@@ -106,7 +105,7 @@ function valorProductos(event) {
         
     };
 
-    console.log("la Cantidad total de ganancias en el almacen es : " + acum);
+   
     document.getElementById('ID-valorProductos').value = acum;
 
 }
@@ -130,7 +129,7 @@ function disminuirExistencias(event){
             console.log();
         }
     }
-    console.log("La disminución del producto");
+    console.log("El array con el producto disminuido");
 
     console.log(JSON.stringify(array));
 }
@@ -160,7 +159,7 @@ function AumentarExistencias(event) {
         }
     }
     
-    console.log("El aumento del producto")
+    console.log("El array con el aumento del producto");
 
     console.log(JSON.stringify(array));
 
@@ -173,6 +172,7 @@ function AumentarExistencias(event) {
 function buscarNombre(event) {
     
     event.preventDefault();
+    var mensaje;
 
     
     let nomBusqueda = document.getElementById('nombre-buscar').value;
@@ -180,11 +180,16 @@ function buscarNombre(event) {
     for (let index = 0; index < array.length; index++) {
         
         if(array[index].nombre == nomBusqueda) {
-            console.log("Si existe");
-        }else{
-            console.log();
+            mensaje = "Si existe el producto";
+            console.log(mensaje);
+
         }
         
+    }
+
+    if(mensaje == undefined || mensaje == null){
+
+        console.log("El producto no existe");
     }
 
 }
@@ -208,6 +213,8 @@ function eliminarProducto(event) {
         }
         
     }
+
+    console.log("El array con el producto ya eliminado");
 
     console.log(array);
 
@@ -246,7 +253,7 @@ function alfabeto(event) {
 
     })
 
-    console.log("Los productos ordenados de forma ascendente quedaron haci")
+    console.log("Los productos ordenados de forma ascendente quedaron haci :")
 
     console.log(alfabet);
 
@@ -273,6 +280,8 @@ function listarFinal(event) {
     newObject.nombre = subirFinal;
 
     array.push(newObject);
+
+    console.log("El array con el producto al final quedo Haci :");
 
     console.log(array);
 
@@ -301,6 +310,8 @@ function listarPrincipio(event){
     newObject.nombre = subirPrincipio;
 
     array.unshift(newObject);
+
+    console.log("El array con el elemento al principio quedo Haci")
 
     console.log(array);
 

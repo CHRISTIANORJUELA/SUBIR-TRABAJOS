@@ -58,9 +58,9 @@ h3{
 }
 
 .div-form button{
-    background-image: linear-gradient( to left, rgb(25, 181, 201), rgba(19, 230, 19, 0.863));
-    border : none;
-    height: 30px;
+    /* background-image: linear-gradient( to left, rgb(25, 181, 201), rgba(19, 230, 19, 0.863)); */
+    /* height: 30px;
+    border: none; */
 
 }
 
@@ -78,8 +78,8 @@ height: 35px;
 }
 
 .div-funciones button{
- background-image: linear-gradient( to left, rgb(25, 181, 201), rgba(19, 230, 19, 0.863));
- border : none;
+ /* background-image: linear-gradient( to left, rgb(25, 181, 201), rgba(19, 230, 19, 0.863));
+ border : none; */
 }
 
 .div-funciones input{
