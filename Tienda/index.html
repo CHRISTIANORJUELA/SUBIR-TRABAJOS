@@ -47,8 +47,8 @@
 
             </div>
             <div>
-
-                <button type="button" onclick="subir(event)">Ordenar</button>
+                <button type="button" onclick="principio(event)" class="Botones-empujar">Listar  al Principio</button>
+                <button type="button" onclick="final(event)" class="Botones-empujar">Listar  al Final</button>
             </div>
         </form>
 <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
@@ -56,77 +56,65 @@
         <div>
             <h3> Cuantos productos hay Por Categoría</h3>
             <button type="button" onclick="informarCategoria(event)">Enviar</button>
-            <div class="input-vacio-categoria inputs-general" id="insertar-Valor-Categoria"></div>
+            <div class="input-vacio-categoria inputs-primero" id="insertar-Valor-Categoria"></div>
         </div>
         <div class="f">
 
             <h3> Cantidad total productos</h3>
-            <input type="text" id="id-cantidadProducto">
+            <input type="text" class="inputs-tranparente" id="id-cantidadProducto" >
             <button type="button" onclick="cantidadProductos(event)">Enviar</button>
             
         </div>
         <div>
 
             <h3> Valor total de los productos</h3>
-            <input type="text" id="ID-valorProductos">
+            <input type="text" class="inputs-tranparente" id="ID-valorProductos">
             <button type="button" onclick="valorProductos(event)">Enviar</button>
                 
         </div>
         <div>
             <h3> Disminuir Existencias de un producto</h3>
-            <input type="text" placeholder="ingrese el nombre del producto" id="nombre-para-disminuir">
-            <input type="text" placeholder="ingrese cantidad de existencias a eliminar" id="existencias-disminuir">
+            <input type="text" placeholder="ingrese el nombre del producto" class="inputs-tranparente" id="nombre-para-disminuir">
+            <input type="text" placeholder="ingrese cantidad de existencias a eliminar"  class="inputs-tranparente" id="existencias-disminuir">
             <button type="button" onclick="disminuirExistencias(event)">Enviar</button>
-            <input type="text"  class="inputs-general" id="input-restar-existencias">
+            <input type="text"  class="inputs-mostrar-javascript" id="input-restar-existencias">
             
         </div>
 
         <div>
             <h3> Aumentar Existencias de un producto</h3>
             
-            <input type="text" placeholder="ingrese el nombre del producto" id="nombre-para-aumentar">
-            <input type="text" placeholder="ingrese cantidad de existencias para aumentar" id="existencias-aumentar">
+            <input type="text" placeholder="ingrese el nombre del producto" class="inputs-tranparente" id="nombre-para-aumentar">
+            <input type="text" placeholder="ingrese cantidad de existencias para aumentar"  class="inputs-tranparente" id="existencias-aumentar">
             <button type="button" onclick="AumentarExistencias(event)">Enviar</button>
-            <input type="text" class="inputs-general" id="input-sumar-existencias">
+            <input type="text" class="inputs-mostrar-javascript" id="input-sumar-existencias">
         </div>
 
         <div>
 
             <h3> Buscar un producto por Nombre</h3>
             
-            <input type="text" placeholder="ingresa-nombre" id="nombre-buscar">
+            <input type="text" placeholder="ingresa-nombre" class="inputs-tranparente" id="nombre-buscar">
             <button type="button" onclick="buscarNombre(event)">Enviar</button>
-            <input type="text" class="inputs-general" id="input-buscar-nombre">
+            <input type="text"  class="inputs-mostrar-javascript" id="input-buscar-nombre">
         </div>
 
         <div>
             <h3> Eliminar un producto</h3>
-            <input type="text" placeholder="Digite el producto" id="eliminarProducto">
+            <input type="text" placeholder="Digite el producto" class="inputs-tranparente" id="eliminarProducto">
             <button type="button" onclick="eliminarProducto(event)">Enviar</button>
+            <input type="text"  class="inputs-mostrar-javascript" id="input-eliminar">
 
         </div>
 
         <div>
             <h3> Listar en Orden Alfabetico los productos</h3>
             <button type="button" onclick="alfabeto(event)">Enviar</button>
+            <input type="text" class="input-alfabeto-css" id="input-alfabeto">
 
         </div>
         <div>
-            <h3>Listar Poducto al Final</h3>
-            <input type="text" placeholder="ingrese el nombre" id="listar-Final">
-            <button type="button" onclick="listarFinal(event)">Enviar</button>
-        </div>
-        <div>
-            <h3>Listar Poducto al Principio</h3>
-            <input type="text" placeholder="ingrese el nombre" id="listarPrincipio">
-            <button type="button" onclick="listarPrincipio(event)">Enviar</button>
-
-
-        </div>
-
-        <div>
-
-            <button type="button" onclick="cargarLocal(event)">Guardar Cambios</button>
+            <button type="button" onclick="cargarLocal(event)" class="boton-local-Storage-css">Guardar Cambios</button>
         </div>
     </div>
 

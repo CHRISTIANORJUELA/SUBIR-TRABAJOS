@@ -1,32 +1,32 @@
-
-
-var plantilla ={
-    
-}
-
-var array = [ ];
-
-function subir(event){
-
+var plantilla ={}
+var array =[];
+function final(event){
     event.preventDefault();
     var categoria = document.getElementById('idCategoria').value;
     var productos = document.getElementById('idProducto').value;
     var cantidad = document.getElementById('idCantidad').value;
     var precio = document.getElementById('idPrecio').value;
-
-    unir(categoria, productos, cantidad, precio);
-
-}
-
-function unir (categoria, productos, cantidad, precio) {
-   
     plantilla = new Object();
     plantilla.categoria = categoria;
     plantilla.nombre = productos;
     plantilla.cantidad = cantidad;
     plantilla.precio = precio;
-
     array.push(plantilla );
+    console.log(array);
+}
+function principio (event){
+    event.preventDefault();
+    var categoria = document.getElementById('idCategoria').value;
+    var productos = document.getElementById('idProducto').value;
+    var cantidad = document.getElementById('idCantidad').value;
+    var precio = document.getElementById('idPrecio').value;
+    plantilla = new Object();
+    plantilla.categoria = categoria;
+    plantilla.nombre = productos;
+    plantilla.cantidad = cantidad;
+    plantilla.precio = precio;
+    array.unshift(plantilla );
+    console.log(array);
 }
 //_-------------Primera Función-------------------
 
@@ -49,11 +49,8 @@ function mandar(arrayCont,cont) {
             cont[valor] = 1
         }
     })
-
-    console.log(cont.toString());
+    document.getElementById('insertar-Valor-Categoria').innerHTML = JSON.stringify(cont);
     console.log(cont);
-
-    document.getElementById('insertar-Valor-Categoria');
 }
 
 // ------------------Segunda Funcion----------------------------------
@@ -72,7 +69,6 @@ function valorProductos(event) {
     let acum = 0;
     let filtro = array.filter((valor) => valor.precio != "");
     console.log(filtro);
-        
         filtro.forEach((valor) =>{
             valor.precio = parseInt(valor.precio);
             acum += valor.precio;
@@ -83,190 +79,81 @@ function valorProductos(event) {
 // -----------------------------Cuarta Funcion--------------------------
 
 function disminuirExistencias(event){
-    
     event.preventDefault();
-
     let nombres = document.getElementById('nombre-para-disminuir').value;
     let cantidad = document.getElementById('existencias-disminuir').value;
     cantidad =  parseInt(cantidad);
     var filtro = array.filter((valor) => valor.nombre == nombres );
-    
     filtro.forEach((valor) =>{
         valor.cantidad -= cantidad;
     })
-    
     document.getElementById('input-restar-existencias').value = JSON.stringify(filtro);
 }
 
-
 //-----------------------------Quinta Funcion----------------------------------
 
-
 function AumentarExistencias(event) {
-    
     event.preventDefault();
-
     let nombres = document.getElementById('nombre-para-aumentar').value;
     let cantidad = document.getElementById('existencias-aumentar').value;
     cantidad =  parseInt(cantidad);
     var filtro = array.filter((valor) => valor.nombre == nombres );
-    
     filtro.forEach((valor) =>{
         valor.cantidad = parseInt(valor.cantidad);
         valor.cantidad += cantidad;
     })
-    
-    console.log(filtro);
     document.getElementById('input-sumar-existencias').value = JSON.stringify(filtro);
-
 }
 
 
 ///-------------------------Sexta Funcion---------------------------
 
 function buscarNombre(event) {
-    
     event.preventDefault(); 
     let nomBusqueda = document.getElementById('nombre-buscar').value;
-
     const busqueda = array.some((valor) => valor.nombre == nomBusqueda);
-
-
+    if(busqueda == true){
+        document.getElementById('input-buscar-nombre').value = "Producto Encontrado";
+    }else{
+        document.getElementById('input-buscar-nombre').value = "Producto no Encontrado";
+    }
 }
-
 
 //-------------------------Septima Funcion---------------------------
 
 function eliminarProducto(event) {
     event.preventDefault();
-
     let remover = document.getElementById('eliminarProducto').value;
-
-    for (let index = 0; index < array.length; index++) {
-        
-        if(array[index].nombre == remover) {
-
-            delete array[index].nombre
-           
-        }else{
-            console.log();
-        }
-        
-    }
-
-    console.log("El array con el producto ya eliminado");
-
-    console.log(array);
-
+    let filtro = array.some((valor)=> valor.nombre == remover);
+   if(filtro == true){
+       let indice = array.findIndex((valor)=> valor.nombre == remover);
+       delete array[indice];
+       document.getElementById('input-eliminar').value = "Operación exitosa";
+   }else{
+     document.getElementById('input-eliminar').value = "Producto no encontrado";
+   }
 }
-
 
 //----------------------------Octava Funcion-------------------------
 
-
 function alfabeto(event) {
-    
     event.preventDefault();
     let orden = [];
-
-    for (let index = 0; index < array.length; index++) {
-        if((array[index].nombre != undefined) && (array[index].nombre != "" )){
-
-            orden.push(array[index].nombre);
-        }
-        
-    }
-
-    let alfabet = orden.sort((a,b)=>{
-        
-        if(a==b){
-            return 0;
-        }
-
-        if(a<b){
-            return -1;
-        }
-
-        if(a>b){
-            return 1
-        }
-
+    let filtro = array.filter((valor) => valor.nombre != "");
+    filtro.forEach((valor) => {
+       orden.push(valor.nombre)
     })
-
-    console.log("Los productos ordenados de forma ascendente quedaron haci :")
-
-    console.log(alfabet);
-
-}
-
-
-//---------------------------Novena Funcion----------------------
-
-function listarFinal(event) {
-    
-    event.preventDefault();
-
-    subirFinal = document.getElementById('listar-Final').value;
-
-    var newObject = {
-       
-        categoria : "",
-        nombre :    "",
-        cantidad : "",
-        precio : "",
-
-    }
-
-    newObject.nombre = subirFinal;
-
-    array.push(newObject);
-
-    console.log("El array con el producto al final quedo Haci :");
-
+    let alfabet = orden.sort();
+    document.getElementById('input-alfabeto').value = alfabet;
+    console.log(filtro);
     console.log(array);
-
-
-}
-
-
-//---------------------------Decima Funcion-----------------------------
-
-
-function listarPrincipio(event){
-    
-    event.preventDefault();
-
-    subirPrincipio = document.getElementById('listarPrincipio').value;
-
-    var newObject = {
-       
-        categoria : "",
-        nombre :    "",
-        cantidad : "",
-        precio : "",
-
-    }
-
-    newObject.nombre = subirPrincipio;
-
-    array.unshift(newObject);
-
-    console.log("El array con el elemento al principio quedo Haci")
-
-    console.log(array);
-
 }
 
 //--------------Guardar Cambios------------------------------
 
-
-function cargarLocal(event) {
-    
+function cargarLocal(event) { 
     event.preventDefault();
-
     copia = JSON.stringify(array);
-
     localStorage.setItem('Carga', copia );
 }
-
 

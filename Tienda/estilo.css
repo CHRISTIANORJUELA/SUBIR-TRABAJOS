@@ -15,8 +15,6 @@ h3{
 }
 
 
-
-
 .div-titulo-principal{
 
     text-align: center;
@@ -31,7 +29,6 @@ h3{
 }
 
 .div-main{
-
     text-align: center;
     background-image: url(fondo-verde.webp);
     overflow: hidden ;
@@ -55,15 +52,16 @@ h3{
     border-left:none;
     border-right:none;
     border-bottom: black , 5px , solid;
+    width: 200px;
+    height: 35px;
+}
+
+.Botones-empujar{
+    display: inline;
+    margin-top:10px;
 }
 
 
-
-.inputs{
-
-width: 200px;
-height: 35px;
-}
 
 .div-funciones{
     background-image: linear-gradient(to left , rgba(38, 209, 209) , rgb(32, 197, 76) );
@@ -80,7 +78,7 @@ height: 35px;
     
 }
 
-.inputs-general{
+.inputs-primero{
     display: block;
     margin-top: 30px;
     position: relative;
@@ -90,6 +88,45 @@ height: 35px;
     border-radius: 5px;
     border: none;
     background-color: aliceblue;
-    z-index: 2;
 
+}
+
+.inputs-mostrar-javascript{
+    display: block;
+    margin-top: 30px;
+    position: relative;
+    left: 20px;
+    width: 380px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: aliceblue;
+}
+
+
+.input-alfabeto-css{
+
+    display:block;
+    background-color: aliceblue;
+    width: 380px;
+    height:30px;
+    border-radius: 5px;
+    margin-top: 20px;
+    position: relative;
+    left: 20px;
+    border:none;
+}
+
+.inputs-tranparente{
+
+    background-color:transparent;
+    border-top:none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px , black , solid;
+}
+
+.boton-local-Storage-css{
+
+    margin-top: 20px;
 }
