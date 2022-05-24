@@ -56,43 +56,47 @@
         <div>
             <h3> Cuantos productos hay Por Categoría</h3>
             <button type="button" onclick="informarCategoria(event)">Enviar</button>
+            <div class="input-vacio-categoria inputs-general" id="insertar-Valor-Categoria"></div>
         </div>
         <div class="f">
 
             <h3> Cantidad total productos</h3>
-            <button type="button" onclick="cantidadProductos(event)">Enviar</button>
             <input type="text" id="id-cantidadProducto">
+            <button type="button" onclick="cantidadProductos(event)">Enviar</button>
             
         </div>
         <div>
 
             <h3> Valor total de los productos</h3>
-            <button type="button" onclick="valorProductos(event)">Enviar</button>
             <input type="text" id="ID-valorProductos">
+            <button type="button" onclick="valorProductos(event)">Enviar</button>
                 
         </div>
         <div>
             <h3> Disminuir Existencias de un producto</h3>
-            <button type="button" onclick="disminuirExistencias(event)">Enviar</button>
             <input type="text" placeholder="ingrese el nombre del producto" id="nombre-para-disminuir">
             <input type="text" placeholder="ingrese cantidad de existencias a eliminar" id="existencias-disminuir">
+            <button type="button" onclick="disminuirExistencias(event)">Enviar</button>
+            <input type="text"  class="inputs-general" id="input-restar-existencias">
             
         </div>
 
         <div>
             <h3> Aumentar Existencias de un producto</h3>
-            <button type="button" onclick="AumentarExistencias(event)">Enviar</button>
+            
             <input type="text" placeholder="ingrese el nombre del producto" id="nombre-para-aumentar">
             <input type="text" placeholder="ingrese cantidad de existencias para aumentar" id="existencias-aumentar">
-
+            <button type="button" onclick="AumentarExistencias(event)">Enviar</button>
+            <input type="text" class="inputs-general" id="input-sumar-existencias">
         </div>
 
         <div>
 
             <h3> Buscar un producto por Nombre</h3>
-            <button type="button" onclick="buscarNombre(event)">Enviar</button>
+            
             <input type="text" placeholder="ingresa-nombre" id="nombre-buscar">
-
+            <button type="button" onclick="buscarNombre(event)">Enviar</button>
+            <input type="text" class="inputs-general" id="input-buscar-nombre">
         </div>
 
         <div>

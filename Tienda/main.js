@@ -14,7 +14,6 @@ function subir(event){
     var cantidad = document.getElementById('idCantidad').value;
     var precio = document.getElementById('idPrecio').value;
 
-
     unir(categoria, productos, cantidad, precio);
 
 }
@@ -35,79 +34,50 @@ function informarCategoria(event) {
     event.preventDefault();
     var cont = [];
     var arrayCont = [];
-    array.forEach(hallarCategoria);
-    function hallarCategoria(valor){
-    
-    if((valor.categoria !== null) && (valor.categoria != ""))
-    arrayCont.push(valor.categoria)
-    }
-
-    mandar(arrayCont,cont)
-   
+    var filtrado = array.filter((valor) => valor.categoria != "");
+    filtrado.forEach((valor) =>{
+    arrayCont.push(valor.categoria);
+    })
+    mandar(arrayCont,cont);
 }
 
 function mandar(arrayCont,cont) {
-    
-    arrayCont.forEach(ordenarDatos)
-    function ordenarDatos(valor){
-
+    arrayCont.forEach((valor) => {
         if(cont[valor]){
             cont[valor]++;
         }else{
             cont[valor] = 1
         }
-    }
+    })
 
-    
- 
-      console.log("El resultado de la busqueda de Categorias Arrojo")
-       console.log( cont );
+    console.log(cont.toString());
+    console.log(cont);
 
+    document.getElementById('insertar-Valor-Categoria');
 }
 
 // ------------------Segunda Funcion----------------------------------
 
 function cantidadProductos(event) {
     event.preventDefault();
-
     arrayCont = [];
-
-    array.forEach(hallarProductos)
-
-    function hallarProductos(valor) {
-        if(valor.nombre != ""){
-            arrayCont.push(valor.nombre);
-        }
-        
-    }
-
+    arrayCont = array.filter((valor) => valor.name != "");
     let longitud = arrayCont.length;
-   
     document.getElementById('id-cantidadProducto').value = longitud;
-
 }
 
 //--------------------------Tercera Funcion-----------------------
 function valorProductos(event) {
-    
     event.preventDefault();
     let acum = 0;
-    array.forEach(valorTotalPrductos)
-
-    function valorTotalPrductos(valor) {
-        if(valor.precio != ""){
-            var convertir  = parseInt(valor.precio);
-            acum += convertir;
-        }else{
-            console.log();
-        }
+    let filtro = array.filter((valor) => valor.precio != "");
+    console.log(filtro);
         
-        
-    };
-
-   
+        filtro.forEach((valor) =>{
+            valor.precio = parseInt(valor.precio);
+            acum += valor.precio;
+        })
     document.getElementById('ID-valorProductos').value = acum;
-
 }
 
 // -----------------------------Cuarta Funcion--------------------------
@@ -119,19 +89,13 @@ function disminuirExistencias(event){
     let nombres = document.getElementById('nombre-para-disminuir').value;
     let cantidad = document.getElementById('existencias-disminuir').value;
     cantidad =  parseInt(cantidad);
+    var filtro = array.filter((valor) => valor.nombre == nombres );
     
+    filtro.forEach((valor) =>{
+        valor.cantidad -= cantidad;
+    })
     
-    for(let i=0; i<array.length; i++){
-        if(array[i].nombre == nombres &&  array[i].cantidad >0){
-            array[i].cantidad -= cantidad;
-
-        }else{
-            console.log();
-        }
-    }
-    console.log("El array con el producto disminuido");
-
-    console.log(JSON.stringify(array));
+    document.getElementById('input-restar-existencias').value = JSON.stringify(filtro);
 }
 
 
@@ -142,27 +106,18 @@ function AumentarExistencias(event) {
     
     event.preventDefault();
 
-    let nombres = document.getElementById('nombre-para-aumentar').value;
-    console.log(nombres);
-    let cantidad = document.getElementById('existencias-aumentar').value;
+    let nombres = document.getElementById('nombre-para-disminuir').value;
+    let cantidad = document.getElementById('existencias-disminuir').value;
     cantidad =  parseInt(cantidad);
-
-    console.log(cantidad);
-
-    for(let i=0; i<array.length; i++){
-
-        if(array[i].nombre == nombres){
-            array[i].cantidad += cantidad;
-
-        }else{
-            console.log();
-        }
-    }
+    var filtro = array.filter((valor) => valor.nombre == nombres );
     
-    console.log("El array con el aumento del producto");
-
-    console.log(JSON.stringify(array));
-
+    filtro.forEach((valor) =>{
+        // valor.cantidad = parseInt(valor.cantidad);
+        valor.cantidad += cantidad;
+    })
+    
+    console.log(filtro);
+    document.getElementById('input-sumar-existencias').value = JSON.stringify(filtro);
 
 }
 

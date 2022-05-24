@@ -67,7 +67,7 @@ height: 35px;
 
 .div-funciones{
     background-image: linear-gradient(to left , rgba(38, 209, 209) , rgb(32, 197, 76) );
-    width: max-content;
+    max-width: max-content;
     position: relative;
     left: 30vw;
 }
@@ -75,9 +75,21 @@ height: 35px;
 
 
 .div-funciones input{
-    background: none;
-    border-top: none;
-    border-left:none;
-    border-right:none;
-    border-bottom: black, 5px,solid;
+    
+    
+    
+}
+
+.inputs-general{
+    display: block;
+    margin-top: 30px;
+    position: relative;
+    left: 20px;
+    width: 380px;
+    height: 100px;
+    border-radius: 5px;
+    border: none;
+    background-color: aliceblue;
+    z-index: 2;
+
 }
