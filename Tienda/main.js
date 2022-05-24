@@ -1,19 +1,5 @@
 var plantilla ={}
 var array =[];
-function final(event){
-    event.preventDefault();
-    var categoria = document.getElementById('idCategoria').value;
-    var productos = document.getElementById('idProducto').value;
-    var cantidad = document.getElementById('idCantidad').value;
-    var precio = document.getElementById('idPrecio').value;
-    plantilla = new Object();
-    plantilla.categoria = categoria;
-    plantilla.nombre = productos;
-    plantilla.cantidad = cantidad;
-    plantilla.precio = precio;
-    array.push(plantilla );
-    console.log(array);
-}
 function principio (event){
     event.preventDefault();
     var categoria = document.getElementById('idCategoria').value;
@@ -28,20 +14,34 @@ function principio (event){
     array.unshift(plantilla );
     console.log(array);
 }
+function final(event){
+    event.preventDefault();
+    var categoria = document.getElementById('idCategoria').value;
+    var productos = document.getElementById('idProducto').value;
+    var cantidad = document.getElementById('idCantidad').value;
+    var precio = document.getElementById('idPrecio').value;
+    plantilla = new Object();
+    plantilla.categoria = categoria;
+    plantilla.nombre = productos;
+    plantilla.cantidad = cantidad;
+    plantilla.precio = precio;
+    array.push(plantilla );
+    console.log(array);
+}
 //_-------------Primera Función-------------------
 
 function informarCategoria(event) {
     event.preventDefault();
     var cont = [];
     var arrayCont = [];
-    var filtrado = array.filter((valor) => valor.categoria != "");
+    let filtrado = array.filter((valor) => valor.categoria != "");
     filtrado.forEach((valor) =>{
     arrayCont.push(valor.categoria);
     })
-    mandar(arrayCont,cont);
+    mandarDatos(arrayCont,cont);
 }
 
-function mandar(arrayCont,cont) {
+function mandarDatos(arrayCont,cont) {
     arrayCont.forEach((valor) => {
         if(cont[valor]){
             cont[valor]++;
@@ -83,10 +83,8 @@ function disminuirExistencias(event){
     let nombres = document.getElementById('nombre-para-disminuir').value;
     let cantidad = document.getElementById('existencias-disminuir').value;
     cantidad =  parseInt(cantidad);
-    var filtro = array.filter((valor) => valor.nombre == nombres );
-    filtro.forEach((valor) =>{
-        valor.cantidad -= cantidad;
-    })
+    let filtro = array.filter((valor) => valor.nombre == nombres );
+    filtro.forEach((valor) => valor.cantidad -= cantidad);
     document.getElementById('input-restar-existencias').value = JSON.stringify(filtro);
 }
 
@@ -97,7 +95,7 @@ function AumentarExistencias(event) {
     let nombres = document.getElementById('nombre-para-aumentar').value;
     let cantidad = document.getElementById('existencias-aumentar').value;
     cantidad =  parseInt(cantidad);
-    var filtro = array.filter((valor) => valor.nombre == nombres );
+    let filtro = array.filter((valor) => valor.nombre == nombres );
     filtro.forEach((valor) =>{
         valor.cantidad = parseInt(valor.cantidad);
         valor.cantidad += cantidad;
