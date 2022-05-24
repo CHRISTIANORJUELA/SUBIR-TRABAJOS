@@ -106,13 +106,13 @@ function AumentarExistencias(event) {
     
     event.preventDefault();
 
-    let nombres = document.getElementById('nombre-para-disminuir').value;
-    let cantidad = document.getElementById('existencias-disminuir').value;
+    let nombres = document.getElementById('nombre-para-aumentar').value;
+    let cantidad = document.getElementById('existencias-aumentar').value;
     cantidad =  parseInt(cantidad);
     var filtro = array.filter((valor) => valor.nombre == nombres );
     
     filtro.forEach((valor) =>{
-        // valor.cantidad = parseInt(valor.cantidad);
+        valor.cantidad = parseInt(valor.cantidad);
         valor.cantidad += cantidad;
     })
     
@@ -126,26 +126,11 @@ function AumentarExistencias(event) {
 
 function buscarNombre(event) {
     
-    event.preventDefault();
-    var mensaje;
-
-    
+    event.preventDefault(); 
     let nomBusqueda = document.getElementById('nombre-buscar').value;
 
-    for (let index = 0; index < array.length; index++) {
-        
-        if(array[index].nombre == nomBusqueda) {
-            mensaje = "Si existe el producto";
-            console.log(mensaje);
+    const busqueda = array.some((valor) => valor.nombre == nomBusqueda);
 
-        }
-        
-    }
-
-    if(mensaje == undefined || mensaje == null){
-
-        console.log("El producto no existe");
-    }
 
 }
 
