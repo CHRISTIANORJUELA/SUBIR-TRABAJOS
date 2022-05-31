@@ -42,14 +42,14 @@ function informarCategoria(event) {
 }
 
 function mandarDatos(arrayCont,cont) {
+    console.log(arrayCont);
     arrayCont.forEach((valor) => {
         if(cont[valor]){
             cont[valor]++;
         }else{
             cont[valor] = 1
         }
-    })
-    document.getElementById('insertar-Valor-Categoria').innerHTML = JSON.stringify(cont);
+    });
     console.log(cont);
 }
 
