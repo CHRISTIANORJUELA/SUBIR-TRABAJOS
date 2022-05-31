@@ -51,6 +51,7 @@ function mandarDatos(arrayCont,cont) {
         }
     });
     console.log(cont);
+    document.getElementById('insertar-Valor-Categoria').innerHTML = cont;
 }
 
 // ------------------Segunda Funcion----------------------------------
