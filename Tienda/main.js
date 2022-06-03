@@ -177,35 +177,21 @@ function resetear(event) {
 }
 //-----------------------Decima Funcion--------------------------
 function mayor_menor(event) {
-    event.preventDefault();
-    var obj ={
-        nombre: "",
-        mayor: ""
-    }
-    var nombre;
-    var mayor;
-    let filtrado = array.filter((valor) => valor.nombre != "" && valor.precio != "");;
-    let fin = filtrado.map((valor,indice)=>{
-     if(indice==0){
-      obj = new Object();
-      obj.mayor=valor.precio
-      obj.nombre=valor.nombre
-     }
-
-     if(indice>1 && valor.precio>mayor){
-         obj = new Object();
-         obj.mayor=valor.precio;
-         obj.nombre=valor.nombre;
-     }
-     let am = [];
-     am.push(obj);
-     return am;
-    })
-
-    console.log(fin);
-    console.log(mayor);
-    console.log(nombre);
-    
+  event.preventDefault();
+  var nombre;
+  let filtrado = array.filter((valor) => valor.nombre != "" && valor.precio != "");;
+  let calcularMayorPrecio = filtrado.reduce((mayor,valor,indice)=>{
+   if(indice==0){
+     mayor=valor.precio;
+     nombre=valor.nombre;
+   }
+   if(indice>0 && valor.precio>mayor){
+     mayor=valor.precio;
+     nombre=valor.nombre;
+   }
+   return "El producto con el precio mas alto en la tienda es "+nombre+" con: "+mayor+"$";
+  },0)
+  document.getElementById('input-mayor-menor').value= calcularMayorPrecio;
 }
 //--------------Guardar Cambios------------------------------
 
