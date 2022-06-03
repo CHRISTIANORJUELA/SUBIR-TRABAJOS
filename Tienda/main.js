@@ -12,7 +12,6 @@ function principio (event){
     plantilla.cantidad = cantidad;
     plantilla.precio = precio;
     array.unshift(plantilla );
-    console.log(array);
 }
 function final(event){
     event.preventDefault();
@@ -26,33 +25,55 @@ function final(event){
     plantilla.cantidad = cantidad;
     plantilla.precio = precio;
     array.push(plantilla );
-    console.log(array);
 }
 //_-------------Primera Función-------------------
 
 function informarCategoria(event) {
     event.preventDefault();
-    var cont = [];
+    var cont=[];
     var arrayCont = [];
     let filtrado = array.filter((valor) => valor.categoria != "");
     filtrado.forEach((valor) =>{
     arrayCont.push(valor.categoria);
     })
-    mandarDatos(arrayCont,cont);
+    let key = 0;
+    mandarDatos(arrayCont,cont,key);
 }
 
-function mandarDatos(arrayCont,cont) {
-    console.log(arrayCont);
-    arrayCont.forEach((valor) => {
-        if(cont[valor]){
-            cont[valor]++;
-        }else{
-            cont[valor] = 1
+function mandarDatos(arrayCont,cont,key) {
+    arrayCont.forEach((principalValue)=>{
+    if(key===0){
+        let obj={
+        categoria: principalValue,
+        cantidad:1
         }
-    });
-    console.log(cont);
-    document.getElementById('insertar-Valor-Categoria').innerHTML = cont;
+        cont.push(obj);
+    }
+
+    if(key===1){
+        let categoria = cont.some((valor) => valor.categoria == principalValue);
+        if(categoria==false){
+            let  createObj = {
+                categoria:principalValue,
+                cantidad: 1,
+            }
+            cont.push(createObj);
+        }
+        if(categoria==true){
+            cont.forEach((valor) =>{       
+            if(valor.categoria == principalValue){
+            valor.cantidad +=1;
+            }
+            })
+        }
+    } 
+    key=1;
+    document.getElementById('insertar-Valor-Categoria').innerHTML=JSON.stringify(cont);
+    })
 }
+
+        
+    
 
 // ------------------Segunda Funcion----------------------------------
 
@@ -148,6 +169,44 @@ function alfabeto(event) {
     console.log(array);
 }
 
+// ------------------------Novena Funcion------------------------
+function resetear(event) {
+    event.preventDefault();
+    array.map((valor)=> valor.precio=0);
+    document.getElementById('input-resetear').value = JSON.stringify(array);
+}
+//-----------------------Decima Funcion--------------------------
+function mayor_menor(event) {
+    event.preventDefault();
+    var obj ={
+        nombre: "",
+        mayor: ""
+    }
+    var nombre;
+    var mayor;
+    let filtrado = array.filter((valor) => valor.nombre != "" && valor.precio != "");;
+    let fin = filtrado.map((valor,indice)=>{
+     if(indice==0){
+      obj = new Object();
+      obj.mayor=valor.precio
+      obj.nombre=valor.nombre
+     }
+
+     if(indice>1 && valor.precio>mayor){
+         obj = new Object();
+         obj.mayor=valor.precio;
+         obj.nombre=valor.nombre;
+     }
+     let am = [];
+     am.push(obj);
+     return am;
+    })
+
+    console.log(fin);
+    console.log(mayor);
+    console.log(nombre);
+    
+}
 //--------------Guardar Cambios------------------------------
 
 function cargarLocal(event) { 
