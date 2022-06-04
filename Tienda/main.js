@@ -76,7 +76,7 @@ function mandarDatos(arrayCont,cont,key) {
 function cantidadProductos(event) {
     event.preventDefault();
     arrayCont = [];
-    arrayCont = array.filter((valor) => valor.name != "");
+    arrayCont = array.filter((valor) => valor.nombre != "");
     let longitud = arrayCont.length;
     document.getElementById('id-cantidadProducto').value = longitud;
 }
@@ -102,7 +102,8 @@ function disminuirExistencias(event){
     let cantidad = document.getElementById('existencias-disminuir').value;
     cantidad =  parseInt(cantidad);
     let filtro = array.filter((valor) => valor.nombre == nombres );
-    filtro.forEach((valor) => valor.cantidad -= cantidad);
+    filtro[0].cantidad = parseInt(filtro[0].cantidad);
+    filtro[0].cantidad -= cantidad;
     document.getElementById('input-restar-existencias').value = JSON.stringify(filtro);
 }
 
@@ -160,15 +161,16 @@ function alfabeto(event) {
     })
     let alfabet = orden.sort();
     document.getElementById('input-alfabeto').value = alfabet;
-    console.log(filtro);
-    console.log(array);
 }
 
 // ------------------------Novena Funcion------------------------
-function resetear(event) {
+function producto_ganancia(event) {
     event.preventDefault();
-    array.map((valor)=> valor.precio=0);
-    document.getElementById('input-resetear').value = JSON.stringify(array);
+    let filtrado = array.filter((valor,indice,arr)=> arr != null )
+    let newArray=filtrado.map((valor) => {
+        return [valor.nombre , valor.precio];
+    });
+    document.getElementById('input_producto_ganancia').value = JSON.stringify(newArray);
 }
 //-----------------------Decima Funcion--------------------------
 function mayor_menor(event) {
@@ -184,6 +186,19 @@ function mayor_menor(event) {
       return min;
     },0);
   document.getElementById('input-mayor-menor').innerHTML="El precio mas bajo en la tienda es :" +calcularMenorPrecio;
+}
+
+function promedio(event) {
+    event.preventDefault();
+    let filtrado = array.filter((valor) => valor.nombre != "" && valor.precio != "");
+    let sum = filtrado.reduce((total,valor) => {
+        valor.precio = parseInt(valor.precio);
+        total += valor.precio;
+        return total
+    },0);
+    let prom = sum/filtrado.length;
+    prom = parseFloat(prom.toFixed(2));
+    document.getElementById('div-promedio').innerHTML = "El promedio de precios es : " + prom;
 }
 //--------------Guardar Cambios------------------------------
 function cargarLocal(event) { 
