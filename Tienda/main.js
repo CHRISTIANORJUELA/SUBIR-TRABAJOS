@@ -49,7 +49,6 @@ function mandarDatos(arrayCont,cont,key) {
         }
         cont.push(obj);
     }
-
     if(key===1){
         let categoria = cont.some((valor) => valor.categoria == principalValue);
         if(categoria==false){
@@ -71,9 +70,6 @@ function mandarDatos(arrayCont,cont,key) {
     document.getElementById('insertar-Valor-Categoria').value=JSON.stringify(cont);
     })
 }
-
-        
-    
 
 // ------------------Segunda Funcion----------------------------------
 
@@ -124,7 +120,6 @@ function AumentarExistencias(event) {
     })
     document.getElementById('input-sumar-existencias').value = JSON.stringify(filtro);
 }
-
 
 ///-------------------------Sexta Funcion---------------------------
 
@@ -179,18 +174,18 @@ function resetear(event) {
 function mayor_menor(event) {
   event.preventDefault();
   let filtrado = array.filter((valor) => valor.nombre != "" && valor.precio != "");;
-  let calcularMayorPrecio = filtrado.reduce((mayor,valor)=>{
-    if(mayor==0){
-        mayor=valor.precio;
+  let calcularMenorPrecio = filtrado.reduce((min,valor)=>{
+    if(min==0){
+        min=valor.precio;
       }
-      else if(valor.precio>mayor)
-      {mayor=valor.precio;}
-      return mayor;
+      else if(valor.precio<min){
+      min=valor.precio; 
+     }
+      return min;
     },0);
-  document.getElementById('input-mayor-menor').innerHTML="El precio mas alto en la tienda es :" +calcularMayorPrecio;
+  document.getElementById('input-mayor-menor').innerHTML="El precio mas bajo en la tienda es :" +calcularMenorPrecio;
 }
 //--------------Guardar Cambios------------------------------
-
 function cargarLocal(event) { 
     event.preventDefault();
     copia = JSON.stringify(array);
