@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
-    <meta name="viewport" content="width=device-width, **user-scalable=no**, initial-scale=1.0, **maximun-scale=1.0**, **minimum-scale=1.0**">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
     <title>Almacen la Rebaja</title>
 </head>
 <body>
@@ -55,85 +54,82 @@
 
 <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
         <div class="div-funciones">
-        <div>
+         <div class="f-class">
             <h3> Cuantos productos hay Por Categoría</h3>
             <button type="button" onclick="informarCategoria(event)">Enviar</button>
-            <div class="input-vacio-categoria inputs-primero" id="insertar-Valor-Categoria"></div>
-        </div>
-        <div class="f">
+            <input class="input-vacio-categoria inputs-primero media-quere" id="insertar-Valor-Categoria">
+         </div>
+         <div class="f-class">
 
             <h3> Cantidad total productos</h3>
-            <input type="text" class="inputs-tranparente" id="id-cantidadProducto" >
+            <input type="text" class="inputs-tranparente media-quere" id="id-cantidadProducto" >
             <button type="button" onclick="cantidadProductos(event)">Enviar</button>
             
-        </div>
-        <div>
+         </div>
+         <div class="f-class">
 
             <h3> Valor total de los productos</h3>
-            <input type="text" class="inputs-tranparente" id="ID-valorProductos">
+            <input type="text" class="inputs-tranparente media-quere" id="ID-valorProductos">
             <button type="button" onclick="valorProductos(event)">Enviar</button>
                 
-        </div>
-        <div>
+         </div>
+         <div class="f-class">
             <h3> Disminuir Existencias de un producto</h3>
             <input type="text" placeholder="ingrese el nombre del producto" class="inputs-tranparente" id="nombre-para-disminuir">
             <input type="text" placeholder="ingrese cantidad de existencias a eliminar"  class="inputs-tranparente" id="existencias-disminuir">
             <button type="button" onclick="disminuirExistencias(event)">Enviar</button>
-            <input type="text"  class="inputs-mostrar-javascript" id="input-restar-existencias">
+            <input type="text"  class="inputs-mostrar-javascript media-quere" id="input-restar-existencias">
             
-        </div>
+         </div>
 
-        <div>
+         <div class="f-class">
             <h3> Aumentar Existencias de un producto</h3>
             
-            <input type="text" placeholder="ingrese el nombre del producto" class="inputs-tranparente" id="nombre-para-aumentar">
+            <input type="text" placeholder="ingrese el nombre del producto" class="inputs-tranparente " id="nombre-para-aumentar">
             <input type="text" placeholder="ingrese cantidad de existencias para aumentar"  class="inputs-tranparente" id="existencias-aumentar">
             <button type="button" onclick="AumentarExistencias(event)">Enviar</button>
-            <input type="text" class="inputs-mostrar-javascript" id="input-sumar-existencias">
-        </div>
+            <input type="text" class="inputs-mostrar-javascript media-quere" id="input-sumar-existencias">
+         </div>
 
-        <div>
+         <div class="f-class">
 
             <h3> Buscar un producto por Nombre</h3>
             
             <input type="text" placeholder="ingresa-nombre" class="inputs-tranparente" id="nombre-buscar">
             <button type="button" onclick="buscarNombre(event)">Enviar</button>
-            <input type="text"  class="inputs-mostrar-javascript" id="input-buscar-nombre">
-        </div>
+            <input type="text"  class="inputs-mostrar-javascript media-quere" id="input-buscar-nombre">
+         </div>
 
-        <div>
+         <div class="f-class">
             <h3> Eliminar un producto</h3>
             <input type="text" placeholder="Digite el producto" class="inputs-tranparente" id="eliminarProducto">
             <button type="button" onclick="eliminarProducto(event)">Enviar</button>
-            <input type="text"  class="inputs-mostrar-javascript" id="input-eliminar">
+            <input type="text"  class="inputs-mostrar-javascript media-quere" id="input-eliminar">
 
-        </div>
+         </div>
 
-        <div>
+         <div class="f-class">
             <h3> Listar en Orden Alfabetico los productos</h3>
             <button type="button" onclick="alfabeto(event)">Enviar</button>
-            <input type="text" class="input-alfabeto-css" id="input-alfabeto">
+            <input type="text" class="input-alfabeto-css media-quere" id="input-alfabeto">
 
-        </div>
-        <div>
-            <h3>Resetear Todos los valores</h3>
+         </div>
+         <div class="f-class">
+            <h3>Resetear Todos los precios</h3>
             <button type="button" onclick="resetear(event)">Enviar</button>
-            <input type="text" class="reseteat-css" id="input-resetear">
-        </div>
+            <input type="text" class="reseteat-css media-quere" id="input-resetear">
+         </div>
 
-        <div>
+         <div class="f-class">
             <h3>Producto mayor y menor ganancias</h3>
             <button type="button" onclick="mayor_menor(event)">Enviar</button>
-            <input type="text" class="mayor-menor-css" id="input-mayor-menor">
-        </div>
+            <div type="text" class="mayor-menor-css media-quere" id="input-mayor-menor"></div>
+         </div>
 
-        <div>
+         <div class="f-class">
             <button type="button" onclick="cargarLocal(event)" class="boton-local-Storage-css">Guardar Cambios</button>
-        </div>
-    </div>
-
-
-
+         </div>
+      </div>
     </main>
 </div>
 

@@ -6,7 +6,7 @@ body{
 
 h1{
     font-family: tahoma, arial, helvetica;
-    font-size: 2vw;
+    font-size: 30px;
     font-weight: 50;
 }
 h3{
@@ -15,37 +15,38 @@ h3{
 }
 
 .div-titulo-principal{
-
     text-align: center;
     background-image: linear-gradient(to top , rgb(39, 201, 25) ,rgb(14, 165, 192));
     overflow: hidden;
+    color: white;
+    text-shadow: 5px 5px 5px rgb(79, 74, 74);
+    width: 100%;
 }
 
 .titulo-principal{
-
-    font-size: 3vw;
+    font-size: 2rem;
     font-family: Tahoma,sans-Serif;
 }
 
 .div-main{
     text-align: center;
-    background-image: url(Video-Imagen/fondo-verde.webp);
     overflow: hidden ;
-    background-size: contain;
     padding: 40px;
+    display:flex;
+    justify-content:center;
 }
 
 .form{
-
     background-image: linear-gradient( to right , rgba(38, 209, 22, 0.849) , rgb(24, 194, 180) );
     max-width: 300px;
     position: relative;
-    left: 35vw;
-    box-shadow: 5px , 5px , 5px black;
+    left: 50px;
+    display:flex;
+    flex-direction: column;
+    border-radius: 10px;
 }
 
 .div-form input{
-
     background : none;
     border-top: none;
     border-left:none;
@@ -66,15 +67,15 @@ h3{
     background-image: linear-gradient(to left , rgba(38, 209, 209) , rgba(38, 209, 22, 0.849) );
     max-width: max-content;
     position: relative;
-    left: 30vw;
     margin-top:40px;
+    border-radius: 10px;
 }
 
 .inputs-primero{
     display: block;
     margin-top: 30px;
     position: relative;
-    left: 20px;
+    left: 15px;
     width: 380px;
     height: 100px;
     border-radius: 5px;
@@ -86,7 +87,7 @@ h3{
     display: block;
     margin-top: 30px;
     position: relative;
-    left: 20px;
+    left: 15px;
     width: 380px;
     height: 30px;
     border-radius: 5px;
@@ -103,7 +104,7 @@ h3{
     border-radius: 5px;
     margin-top: 20px;
     position: relative;
-    left: 20px;
+    left: 15px;
     border:none;
 }
 
@@ -123,7 +124,7 @@ h3{
     display: block;
     margin-top: 30px;
     position: relative;
-    left: 20px;
+    left: 15px;
     width: 380px;
     height: 100px;
     border-radius: 5px;
@@ -135,10 +136,60 @@ h3{
     display: block;
     margin-top: 30px;
     position: relative;
-    left: 20px;
+    left: 15px;
     width: 380px;
     height: 100px;
     border-radius: 5px;
     border: none;
     background-color: aliceblue;
+}
+
+
+@media screen and (max-width:675px) {
+    .div-titulo-principal{
+        width: 100%;
+    }
+    .div-main{
+        width: 100%;
+    }
+    .form{
+        width: 50%;
+        font-size:3vw;
+        padding: 30px;
+    }
+    .div-funciones{
+        width: 70%;
+        padding: 30px;
+    }
+
+    .media-quere{
+        width: 95%;
+    }
+   
+}
+
+@media screen and (max-width:380px){
+    .div-titulo-principal{
+        width: 100%;
+    }
+    .div-main{
+        width: 100%;
+    }
+    .form{
+        font-size:3vw;
+        padding: 30px;
+        position: relative;
+        left: 40px;
+    }
+    .div-funciones{
+        width: 70%;
+        padding: 30px;
+        position: relative;
+        left: 0px;
+    }
+
+    .media-quere{
+        width: 95%;
+    }
+
 }
