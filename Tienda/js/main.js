@@ -56,7 +56,7 @@ function mandarDatos(arrayCont,cont,key) {
                 categoria:principalValue,
                 cantidad: 1,
             }
-            cont.push(createObj);
+            cont.push(createObj );
         }
         if(categoria==true){
             cont.forEach((valor) =>{       
@@ -66,8 +66,12 @@ function mandarDatos(arrayCont,cont,key) {
             })
         }
     } 
-    key=1;
-    document.getElementById('insertar-Valor-Categoria').value=JSON.stringify(cont);
+    key=1; 
+    })
+    document.getElementById('insertar-Valor-Categoria').value = "";
+    cont.forEach((item) =>{
+        document.getElementById('insertar-Valor-Categoria').value += `Categoria:${item.categoria}  Cantidad:${item.cantidad} \n ` ;
+       
     })
 }
 

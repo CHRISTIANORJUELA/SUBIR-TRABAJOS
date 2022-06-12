@@ -57,7 +57,7 @@
          <div class="f-class">
             <h3> Cuantos productos hay Por Categoría</h3>
             <button type="button" onclick="informarCategoria(event)">Enviar</button>
-            <input class="input-vacio-categoria inputs-primero media-quere" id="insertar-Valor-Categoria">
+            <textarea class="input-vacio-categoria inputs-primero media-quere" id="insertar-Valor-Categoria" name=""  cols="99999999999999" rows="1"></textarea> 
          </div>
          <div class="f-class">
 
@@ -77,7 +77,7 @@
             <h3> Disminuir Existencias de un producto</h3>
             <input type="text" placeholder="ingrese el nombre del producto" class="inputs-tranparente" id="nombre-para-disminuir">
             <input type="text" placeholder="ingrese cantidad de existencias a eliminar"  class="inputs-tranparente" id="existencias-disminuir">
-            <button type="button" onclick="disminuirExistencias(event)">Enviar</button>
+            <button type="button" onclick="disminuirExistencias(event)" >Enviar</button>
             <input type="text"  class="inputs-mostrar-javascript media-quere" id="input-restar-existencias">
             
          </div>
@@ -94,10 +94,12 @@
          <div class="f-class">
 
             <h3> Buscar un producto por Nombre</h3>
-            
-            <input type="text" placeholder="ingresa-nombre" class="inputs-tranparente" id="nombre-buscar">
-            <button type="button" onclick="buscarNombre(event)">Enviar</button>
-            <input type="text"  class="inputs-mostrar-javascript media-quere" id="input-buscar-nombre">
+            <div class="button-n">
+
+                <input type="text" placeholder="ingresa-nombre" class="inputs-tranparente " id="nombre-buscar">
+                <button type="button" onclick="buscarNombre(event)">Enviar</button>
+                <input type="text"  class="inputs-mostrar-javascript media-quere " id="input-buscar-nombre">
+            </div>
          </div>
 
          <div class="f-class">
