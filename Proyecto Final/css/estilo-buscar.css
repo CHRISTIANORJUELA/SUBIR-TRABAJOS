@@ -14,7 +14,7 @@ body{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    color: aliceblue;
+    color: rgb(0, 0, 0);
 }
 
 .titulo-tabla{
@@ -26,7 +26,6 @@ body{
 .div-img-tabla{
     display:flex;
     justify-content: center;
-    padding: 50px;
     margin: 0px;
 }
 
@@ -34,4 +33,27 @@ body{
     width: 50%;
     height: 20%;
     text-align: center;
+    border-collapse: collapse;
+}
+
+th,td{
+  padding: 20px;
+}
+
+th{
+    color: aliceblue;
+}
+
+thead{
+    background-color: #14b491;
+    border-bottom: solid  5px #0f362d;
+    padding: 20px;
+}
+
+tr:nth-child(even){
+   background-color: rgba(58, 62, 62, 0.386);
+}
+
+tr:hover td{
+    background-color: rgb(17, 145, 180);
 }
