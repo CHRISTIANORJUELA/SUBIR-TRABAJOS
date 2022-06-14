@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo-buscar.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <title>Document</title>
 </head>
 <body>
@@ -17,55 +20,86 @@
 
     <main>
         <h1 class="titulo-tabla">Tabla De Precios</h1>
-        <div class="div-img-tabla">
-            <table  class="tabla">
+        <div id="div_img_tabla">
+            <table  class="tabla" class="id_tabla">
                 <thead>
                     <tr>
-                        <th>Marca</th><th>Precio</th>
+                        <th>Id</th><th>Marca</th><th>Precio</th><th>Agregar</th>
                     </tr>
                 </thead>
-                <tr>
+                <tr id="ii">
+                    <td>1</td>
                     <td>Ferrari</td>
                     <td>3200000</td>
+                    <td id="td_ferrari" ><span class="material-symbols-outlined" class="detectar">shopping_cart</span></td>
                 </tr>
                 <tr>
+                    <td>2</td>
                     <td>Lamborgini</td>
                     <td>2500000</td>
+                    <td id="td_Lamborgini" class="detectar" ><span class="material-symbols-outlined">shopping_cart</span></td>
                 </tr>
                 <tr>
+                    <td>3</td>
                     <td>Aston Martin</td>
                     <td>3000000</td>
+                    <td id="td_aston_Martin" class="detectar" ><span class="material-symbols-outlined">shopping_cart</span></td>
                 </tr>
                 <tr>
+                    <td>4</td>
                     <td>Mercedez Benz</td>
                     <td>2900000</td>
+                    <td id="td_mercedez_benz" class="detectar" ><span class="material-symbols-outlined">shopping_cart</span></td>
+                    
                 </tr>
                 <tr>
+                    <td>5</td>
                     <td>Jaguar</td>
                     <td>2000000</td>
+                    <td id="td_jaguar" class="detectar" ><span class="material-symbols-outlined">shopping_cart</span></td>
                 </tr>
                 <tr>
+                    <td>6</td>
                     <td>Buggati</td>
                     <td>3500000</td>
+                    <td id="td-buggati" class="detectar" ><span class="material-symbols-outlined">shopping_cart</span></td>
                 </tr>
                 <tr>
+                    <td>7</td>
                     <td>koenigsegg </td>
                     <td>4000000</td>
+                    <td id="td_koenigsegg" class="detectar" ><span class="material-symbols-outlined">shopping_cart</span></td>
                 </tr>
                 <tr>
+                    <td>8</td>
                     <td>Toyota</td>
                     <td>500000</td>
+                    <td id="td-toyota" class="detectar" ><span class="material-symbols-outlined">shopping_cart</span></td>
                 </tr>
                 <tr>
+                    <td>9</td>
                     <td>Chevrolet</td>
                     <td>300000</td>
+                    <td id="td_chevrolet" class="detectar" ><span class="material-symbols-outlined">shopping_cart</span></td>
                 </tr>
                 <tr>
+                    <td>10</td>
                     <td>Roll royce</td>
                     <td>2500000</td>
+                    <td id="td_roll_royce" class="detectar" ><span class="material-symbols-outlined">shopping_cart</span></td>
                 </tr>
             </table>
         </div>
+
+        <section>
+            <ul id="ul_h"></ul>
+        </section>
+        <template id="template">
+          <h1>Hola</h1>
+        </template>
+        <button id='boton'>Enviar</button>
     </main>
+
+    <script src="js/js-compras.js"></script>
 </body>
 </html>

@@ -1,12 +1,20 @@
+var ul_h = document.getElementById('ul_h');
+var template = document.getElementById('template');
+var fragmento = document.createDocumentFragment()
+var boton = document.getElementById('boton');
+const carrito = {}
+var base ={};
+var subir_todo_al_template;
+
 function constructor(id,marca,precio,cantidad) {
     this.id = id;
     this.marca = marca;
     this.precio = precio;
     this.cantidad = cantidad;
 };
-var base ={};
-if(localStorage.getItem("personas")){
-        personas=JSON.parse(localStorage.getItem("personas"));
+
+if(localStorage.getItem('personas')){
+        personas=JSON.parse(localStorage.getItem("key"));
     }
     else{
         personas=[];
@@ -32,21 +40,45 @@ const agregarCarrito = objeto =>{
    let precio = obj[5].textContent;
    let cantidad = 1;
    var carrito = new constructor(id,marca,precio,cantidad);
-   if(base.hasOwnProperty(carrito.id)){
-     carrito.cantidad = base[carrito.id].cantidad +1;
-   }
-   base[carrito.id] = {...carrito}
-   operaciones();
+  //  if(base.hasOwnProperty(carrito.id)){
+  //    carrito.cantidad = base[carrito.id].cantidad +1;
+  //  }
+
+   base.push(carrito);
+   subir_carrito();
 }
 
-const operaciones = () =>{
-var total;
-Object.values(base).forEach(item =>{
-  total = `${item.cantidad * item.precio}`
-})
 
-console.log(total);
+let subir_carrito = ()=>{
+  let copia = JSON.stringify(base);
+  localStorage.setItem('key', copia );
+  let devolver = localStorage.getItem('key');
+  subir_todo_al_template = new constructor(devolver[0].id,devolver.marca,devolver.precio,devolver.cantidad);
+  console.log(subir_todo_al_template);
 }
+
+
+let localStorager = () =>{
+copia = JSON.stringify(base);
+localStorage.setItem('key', copia );
+}
+
+
+
+
+// const agregarmarca = () =>{
+//   if(localStorage.getItem('key')){
+//     key=JSON.parse(localStorage.getItem("key"));
+
+// }
+// else{
+//     personas=[];
+// }
+//    subir_carrito = new constructor()
+  
+// }
+// boton.addEventListener("click", agregarmarca);
+
 
 
 
