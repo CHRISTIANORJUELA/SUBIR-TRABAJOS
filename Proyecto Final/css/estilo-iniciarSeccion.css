@@ -1,0 +1,37 @@
+body{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    background-color: aqua;
+}
+.div-contenido-principal{
+    display: flex;
+    justify-content: center;
+}
+.divs-flex{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+main{
+    width: 400px;
+    height: 1000px;
+}
+.form{
+    background-color: white;
+    padding: 0px 30px 30px 30px;
+    margin-top:70px;
+    border: solid rgb(70, 67, 67) 2px;
+}
+
+.inputs_tamaño{
+    height: 20px;
+}
+
+.btn{
+   position: absolute;
+   left: 50%;
+   transform: translate(-50%);
+   width: 10%;
+   margin-top: 10px;
+}
