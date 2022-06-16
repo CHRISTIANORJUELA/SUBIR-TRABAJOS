@@ -11,15 +11,6 @@ function constructor(id,marca,precio,cantidad) {
     this.precio = precio;
     this.cantidad = cantidad;
 };
-// let caja1 = document.getElementById('caja1');
-// let caja2 = document.getElementById('caja2').vaule;
-// let caja3 = document.getElementById('caja3').value;
-// let objeto = {
-//   marca: caja1,
-//   precio : caja2,
-//   calidad : caja3
-// }
-
 
 
 if(localStorage.getItem('personas')){
@@ -43,15 +34,30 @@ var  detectarBoton = ((e) =>{
 })
 
 const agregarCarrito = objeto =>{
-   let obj = objeto.childNodes;
-   let id = obj[1].textContent;
-   let marca = obj[3].textContent;
-   let precio = obj[5].textContent;
-   let cantidad = 1;
-   let carrito = new constructor(id,marca,precio,cantidad);
-  //  if(base.hasOwnProperty(carrito.id)){
-  //    carrito.cantidad = base[carrito.id].cantidad +1;
-  //  }
+   var carrito;
+   var obj = objeto.childNodes;
+   var id = obj[1].textContent;
+   let respuesta = base.some(valor =>{
+    if(valor.id==id){
+        console.log(id);
+        return true
+    }else{
+        console.log(id);
+        return false
+    }
+   })
+
+   if(respuesta==true){
+    let indice = base.findIndex(item => item.id==id);
+    console.log(indice);
+    base[indice].cantidad +=1;
+   }else if(respuesta==false){
+    let marca = obj[3].textContent;
+    let precio = obj[5].textContent;
+    let cantidad = 1;
+    console.log('antes_constructor');
+    carrito = new constructor(id,marca,precio,cantidad);
+   }
    base.push(carrito);
    console.log(base);
   //  subir_carrito();
