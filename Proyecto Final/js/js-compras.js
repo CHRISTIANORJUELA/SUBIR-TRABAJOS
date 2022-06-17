@@ -39,38 +39,39 @@ const agregarCarrito = objeto =>{
    var id = obj[1].textContent;
    let respuesta = base.some(valor =>{
     if(valor.id==id){
-        console.log(id);
         return true
     }else{
-        console.log(id);
         return false
     }
    })
 
    if(respuesta==true){
     let indice = base.findIndex(item => item.id==id);
-    console.log(indice);
     base[indice].cantidad +=1;
    }else if(respuesta==false){
-    let marca = obj[3].textContent;
-    let precio = obj[5].textContent;
+    let marca = obj[5].textContent;
+    let precio = obj[7].textContent;
     let cantidad = 1;
-    console.log('antes_constructor');
     carrito = new constructor(id,marca,precio,cantidad);
+    base.push(carrito);
    }
-   base.push(carrito);
    console.log(base);
-  //  subir_carrito();
+   subir_carrito();
 }
 
 
-// let subir_carrito = ()=>{
-//   let copia = JSON.stringify(base);
-//   localStorage.setItem('key', copia );
-//   let devolver = localStorage.getItem('key');
+let subir_carrito = ()=>{
+  let copia = JSON.stringify(base);
+  localStorage.setItem('key', copia );
+  let devolver = localStorage.getItem('key');
+  document.getElementById('textarea').value = "";
+  base.forEach(item => {
+    document.getElementById('textarea').value += `Marca: ${item.marca} - cantidad: ${item.cantidad} \n`;
+  })
+
 //   subir_todo_al_template = new constructor(devolver[0].id,devolver.marca,devolver.precio,devolver.cantidad);
 //   console.log(subir_todo_al_template);
-// }
+}
 
 // let localStorager = () =>{
 // copia = JSON.stringify(base);
