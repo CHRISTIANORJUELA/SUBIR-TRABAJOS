@@ -1,7 +1,14 @@
-var ul_h = document.getElementById('ul_h');
-var template = document.getElementById('template');
-var fragmento = document.createDocumentFragment()
-var boton = document.getElementById('boton');
+const tablabody = document.getElementById('items_tabla_carrito');
+const templateTbody = document.getElementById('template_tbody');
+const botonCompra = document.querySelector('#button_compra').addEventListener('click',agregarCompra);
+const tablaCompra = document.getElementById('tbody_totalCompras');
+const templateCompra = document.getElementById('templateCompra');
+const tablaCompraFooter = document.getElementById('tfooter');
+const templateFooter = document.getElementById('templateFooter');
+const fragmento = document.createDocumentFragment();
+const fragmentoCompra = document.createDocumentFragment();
+const fragmentoFooter = document.createDocumentFragment();
+
 var base =[];
 var subir_todo_al_template;
 
@@ -58,20 +65,63 @@ const agregarCarrito = objeto =>{
    console.log(base);
    subir_carrito();
 }
-
+ 
 
 let subir_carrito = ()=>{
   let copia = JSON.stringify(base);
   localStorage.setItem('key', copia );
   let devolver = localStorage.getItem('key');
-  document.getElementById('textarea').value = "";
+  
   base.forEach(item => {
-    document.getElementById('textarea').value += `Marca: ${item.marca} - cantidad: ${item.cantidad} \n`;
+    tablabody.textContent= "";
+    const clone = templateTbody.content.firstElementChild.cloneNode(true);
+    clone.querySelectorAll('td')[0].textContent = item.marca;
+    clone.querySelectorAll('td')[1].textContent = item.cantidad;
+    fragmento.appendChild(clone);
   })
-
-//   subir_todo_al_template = new constructor(devolver[0].id,devolver.marca,devolver.precio,devolver.cantidad);
-//   console.log(subir_todo_al_template);
+  tablabody.appendChild(fragmento);
 }
+
+function agregarCompra() {
+  base.forEach(item =>{
+    tablaCompra.textContent = "";
+    const clone = templateCompra.content.firstElementChild.cloneNode(true);
+    clone.querySelectorAll('td')[0].textContent = item.marca;
+    clone.querySelectorAll('td')[1].textContent = `${item.cantidad * item.precio}`;
+    fragmentoCompra.appendChild(clone);
+  })
+  tablaCompra.appendChild(fragmentoCompra);
+  sumar_y_agregar()
+}
+
+function sumar_y_agregar() {
+  let suma = base.reduce((total,item) =>{
+     total += parseInt(`${item.cantidad * item.precio}`);
+     return total
+  },0)
+  tablaCompraFooter.textContent = "";
+  const cloneTol =  templateFooter.content.cloneNode(true);
+  cloneTol.querySelectorAll('td')[0].textContent = suma;
+  fragmentoFooter.appendChild(cloneTol);
+  tablaCompra.appendChild(fragmentoFooter);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // let localStorager = () =>{
 // copia = JSON.stringify(base);

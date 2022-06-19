@@ -129,3 +129,50 @@ justify-content: center;
 .css-text-area{
     width: 20%;
 }
+
+.div_mostrar_carrito{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+
+.css_tabla_carrito{
+    border-collapse: collapse;
+    width: 40%;
+}
+
+.div_total_compras{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.tabla_total_carrito{
+    border-collapse: collapse;
+    width: 40%;
+}
+
+.btn_dar_compra{
+    width: 10%;
+    height: 30px;
+}
+
+.td_compra{
+    color: black;
+}
+.tabla_total_carrito tr .compra{
+    background-color: none;
+}
+
+.tabla_total_carrito tr:hover .compra {
+    background-color: rgba(255, 255, 45, 0.883);
+}
+
+/* .compra:hover {
+    background-color: gold;
+} */
