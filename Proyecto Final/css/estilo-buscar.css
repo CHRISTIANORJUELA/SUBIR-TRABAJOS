@@ -55,6 +55,13 @@ tr:hover td{
     background-color: rgb(17, 145, 180);
 }
 
+.carrito_pequeño:hover{
+    color: rgb(246, 255, 0);
+    transform: rotate(-30deg);
+}
+
+
+
 .imagen-ferrari-dayotna{
     width: 100%;
     height: 100px;
@@ -135,6 +142,7 @@ justify-content: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
@@ -160,6 +168,15 @@ justify-content: center;
 .btn_dar_compra{
     width: 10%;
     height: 30px;
+    margin-top: 20px;
+    background-color: rgba(255, 217, 0, 0.541);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn_dar_compra:hover{
+    background-color: rgba(255, 217, 0, 0.892);
 }
 
 .td_compra{
@@ -173,6 +190,3 @@ justify-content: center;
     background-color: rgba(255, 255, 45, 0.883);
 }
 
-/* .compra:hover {
-    background-color: gold;
-} */

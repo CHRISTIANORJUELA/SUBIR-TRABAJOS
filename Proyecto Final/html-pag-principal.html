@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Roboto+Slab:wght@100&family=Ropa+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@300&family=Mukta&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css\estilo-pag-principal.css">
     <title>Document</title>
@@ -19,16 +24,36 @@
             <img src="imagenes/car-amarillo.webp" alt="" class="img-koegniss-blamco-negro">
             <h1 class="titulo">Rockwall</h1>
             <nav>
-                <ul><a href="#">Regitrarse</a></ul>
-                <ul><a href="#">Iniciar Seccion</a></ul>
+                <div class="div-nav">
+                    <div>
+                        <ul class="uli">
+                            <a href="http://127.0.0.1:5501/Proyecto%20Final/registro.html" target="_blank" rel="noopener noreferrer">
+                            <span class="material-symbols-outlined">
+                            account_circle
+                            </span>
+                            Registrarse
+                            </a>
+                      </ul>
+                    </div>
+                    <div>
+                        <ul class="uli">
+                            <a href="http://127.0.0.1:5501/Proyecto%20Final/iniciarSeccion.html" target="_blank" rel="noopener noreferrer">
+                            <span class="material-symbols-outlined login">
+                            login
+                            </span>
+                            Iniciar Sección
+                            </a>
+                            </ul>
+                    </div>
+                </div>
             </nav>
         </header>
     <div class="div-main">
         <main>
+            <div>
+                <h1 class="titulo-coches-3">Parte de nuestra Coleccion</h1> 
+             </div> 
             <section class="section-imagen">
-                <div>
-                    <h1 class="titulo-coches-3">Nuestros coches</h1>
-                </div>
                 <div>
                     <img src="imagenes/mercedes-bens-concept-glb.webp" alt="coche-deportivo" class="css-autos">
                 </div>
@@ -46,15 +71,15 @@
             </section>
             <section class="section-icons">
                 <div class="divs-icons"> 
-                    <span class="material-symbols-outlined">electric_car</span>
+                    <span class="icon-foot material-symbols-outlined">electric_car</span>
                     <p>Somos lideres en el mercado  y  tenemos coches electricos de ultima generación</p>
                 </div>
                 <div class="divs-icons"> 
-                    <span class="material-symbols-outlined">credit_card</span>
+                    <span class="icon-foot material-symbols-outlined">credit_card</span>
                     <p>En nuestra empresa tenemos creditos muy acequibles de hasta 15 años</p>
                 </div>
                 <div class="divs-icons"> 
-                    <span class="material-symbols-outlined">check_circle</span>
+                    <span class=" icon-foot material-symbols-outlined">check_circle</span>
                     <p>Garantia de Hasta 5 años</p>
                 </div>
 
@@ -62,8 +87,10 @@
         </main>
     </div>
     <footer>
-        <p>Dirección</p>
-        <p>Tel:322897645</p>
+        <div>
+            <p>Dirección</p>
+            <p>Tel:322897645</p
+        </div>
     </footer>
 </body>
 </html>
