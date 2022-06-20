@@ -27,7 +27,7 @@ main  {
 }
 
 .form{
-    background-color: white;
+    background-color: #E5E5E5;
     padding: 0px 30px 40px 30px;
     margin-top:70px;
     border: solid rgb(70, 67, 67) 2px;
@@ -38,11 +38,15 @@ main  {
 
 .inputs_tamaño{
     height: 20px;
-    border: solid 1px #ccc;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    transition: .3s ease all;
 }
 
 .inputs_tamaño:focus{
-    border-color:rgb(17, 17, 207);
+    border: 3px solid #0075ff;
+    outline:none;
+    box-shadow: 3px 0px 30px rgb(163, 163, 163,0.4);
 }
 
 .btn{

@@ -19,18 +19,22 @@
                 <label class="label_titulo">Ingresa tus Datos</label>
                 <div class="div-form-input-1 divs-flex">
                     <label for="">Nombre</label>
-                 <input type="text" id="input-nombre" class="css_input_nombre inputs_tamaño">
+                  <input type="text" id="input-nombre" class="css_input_nombre inputs_tamaño" maxlength="40" minlength="10" onpaste="return false" onkeypress="return input1letras(event)" >
                 </div>
                 <div class="div-form-input-1 divs-flex">
                     <label for="">Numero Tarjeta de credito</label>
-                 <input type="text" id="input-tarjeta" class="css_input_tarjeta inputs_tamaño">
+                 <input type="text" id="input-tarjeta" class="css_input_tarjeta inputs_tamaño" maxlength="10" minlenght="8" onpaste="return false" onkeypress="return inputNumeros(event)">
                 </div>
                 <div class="div-form-input-1 divs-flex">
                     <label for="">Telefono</label>
-                 <input type="text" id="input-telefono" class="css_input_telefono inputs_tamaño">
+                 <input type="text" id="input-telefono" class="css_input_telefono inputs_tamaño" maxlength="10" minlength="10" onpaste="return false" onkeypress="return inputNumeros(event)">
                 </div>
                 <div class="divs-flex">
-                   <button type="button" class="btn" id="id_btn"><span class="material-symbols-outlined">arrow_forward</span></button>
+                   <button type="button" class="btn" id="id_btn">
+                    <span class="material-symbols-outlined">
+                        keyboard_double_arrow_right
+                        </span>
+                   </button>
                 </div>
             </form>
         </main>

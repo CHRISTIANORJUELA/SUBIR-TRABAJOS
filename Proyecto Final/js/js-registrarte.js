@@ -1,50 +1,42 @@
 const boton = document.querySelector('#id_btn').addEventListener('click',validar);
 let inputs = document.getElementById('input-nombre');
-// inputs.addEventListener('keypress', function (e)  {
-
-//     console.log('hola');
-//     key=e.keyCode || e.which;
-//     teclado=String.fromCharCode(key).toLowerCase();
-//     letras = "abcdefghijklmnñopqrstuvwxyz";
-//     especiales = "8-37-38-46-164";
-//     teclado_especial=false;
-   
-//     for(let i in especiales){
-//        if(key==especiales[i]){
-//            teclado_especial_=true;break;
-//        }
-//     }
-
-//     if(letras.indexOf(teclado) == -1 && !teclado_especial){
-//        return false
-//       }
-// });
-
 const url = "https://629faf73461f8173e4ef0b80.mockapi.io/FACTUR/A/Factura";
 const objetoSubirBase = [];
 
+function input1letras(e) {
+    key=e.keyCode || e.which;
+    teclado=String.fromCharCode(key).toLowerCase();
+    letras = "abcdefghijklmnñopqrstuvwxyz";
+    especiales = "8-37-38-46-164";
+    teclado_especial=false;
+   
+    for(let i in especiales){
+       if(key==especiales[i]){
+           teclado_especial_=true;break;
+       }
+    }
+    if(letras.indexOf(teclado) == -1 && !teclado_especial){
+       return false
+    }
+};
 
-//   function myFunction(e) {
-    //  console.log('hola');
-    //  key=e.keyCode || e.which;
-    //  teclado=String.fromCharCode(key).toLowerCase();
-    //  letras = "abcdefghijklmnñopqrstuvwxyz";
-    //  especiales = "8-37-38-46-164";
-    //  teclado_especial=false;
-    
-    //  for(let i in especiales){
-    //     if(key==especiales[i]){
-    //         teclado_especial_=true;break;
-    //     }
-    //  }
+function inputNumeros(e) {
+    key=e.keyCode || e.which;
+    teclado=String.fromCharCode(key);
+    numeros = "0123456789";
+    especiales = "8-37-38-46-164";
+    teclado_especial=false;
+   
+    for(let i in especiales){
+       if(key==especiales[i]){
+           teclado_especial_=true;break;
+       }
+    }
 
-    //  if(letras.indexOf(teclado) == -1 && !teclado_especial){
-    //     return false
-    //    }
-// }
-
-    
-
+    if(numeros.indexOf(teclado) == -1 && !teclado_especial){
+       return false
+    }
+}
 
 async function validar() {
     const nombre = document.getElementById('input-nombre').value;
@@ -67,7 +59,6 @@ async function validar() {
 
 function asegurar(post,nombre,tarjetaDeCredito,telefono) {
     const bolean = post.some(item => (item.TarjetaDeCredito===tarjetaDeCredito && item.Telefono ===telefono));
-    console.log(bolean);
     if (bolean == true) {
         console.log('No puedes entrar')
     }else  if(bolean == false){
@@ -77,10 +68,8 @@ function asegurar(post,nombre,tarjetaDeCredito,telefono) {
             Telefono : telefono
              }
             objetoSubirBase.push(objetoInformacion);
-            console.log(objetoSubirBase);
             saveUser(objetoInformacion);
-    }
-    
+    }  
 }
 
 function  saveUser(objetoInformacion){
