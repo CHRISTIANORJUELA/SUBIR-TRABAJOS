@@ -1,7 +1,9 @@
 const boton = document.querySelector('#id_btn').addEventListener('click',validar);
 let inputs = document.getElementById('input-nombre');
+const btnRocket = document.querySelector('#rocket').addEventListener('click',mostrarNombres);
 const url = "https://629faf73461f8173e4ef0b80.mockapi.io/FACTUR/A/Factura";
 const objetoSubirBase = [];
+
 
 function input1letras(e) {
     key=e.keyCode || e.which;
@@ -38,6 +40,37 @@ function inputNumeros(e) {
     }
 }
 
+function mostrarNombres() {
+    if(localStorage.getItem('key')){
+        let devuelto = JSON.parse(localStorage.getItem('key'));
+        let nombre = devuelto.map(item => {
+            return {
+                Nombre: item.Nombre
+            }
+        })
+
+        var posicion1 = Object.values(devuelto).findIndex(item => {
+            if(item.TarjetaDeCredito == 9994445 ){
+               return `${item.Nombre} eres el administrador`
+            }else {
+                return false
+            }
+        });
+        
+        document.getElementById('textTarea2').value = "";
+        document.getElementById('textTarea2').value = `El administrador es : ${devuelto[posicion1].Nombre}`;
+        document.getElementById('textTarea2').style.display = 'block'
+        
+        console.log(nombre);
+        document.getElementById('textTarea1').value = "";
+        nombre.forEach((item) =>{
+            document.getElementById('textTarea1').style.display = 'block'
+            document.getElementById('textTarea1').value+= `${item.Nombre} \n`
+            document.getElementById('textTarea1').style.display = 'block'
+        })
+    }
+}
+
 async function validar() {
     const nombre = document.getElementById('input-nombre').value;
     const tarjetaDeCredito = document.getElementById('input-tarjeta').value;
@@ -49,7 +82,6 @@ async function validar() {
         const verdadTarjeta = isNaN(tarjetaDeCredito);  
         const verdadTelefono = isNaN(telefono)
         if (verdadTarjeta == false && verdadTelefono == false) {
-            console.log('hola');
             const res = await fetch(url);
             const post= await res.json();
          asegurar(post,nombre,tarjetaDeCredito,telefono);
@@ -60,7 +92,7 @@ async function validar() {
 function asegurar(post,nombre,tarjetaDeCredito,telefono) {
     const bolean = post.some(item => (item.TarjetaDeCredito===tarjetaDeCredito && item.Telefono ===telefono));
     if (bolean == true) {
-        console.log('No puedes entrar')
+        alert('Error al ingresar');
     }else  if(bolean == false){
             let objetoInformacion = {
             Nombre : nombre,
@@ -68,7 +100,17 @@ function asegurar(post,nombre,tarjetaDeCredito,telefono) {
             Telefono : telefono
              }
             objetoSubirBase.push(objetoInformacion);
-            saveUser(objetoInformacion);
+            if(localStorage.getItem('key')){
+                let devuelto = JSON.parse(localStorage.getItem('key'));
+                devuelto.push(objetoInformacion);
+                localStorage.setItem('key',JSON.stringify(devuelto));
+
+            }else {
+                var datosLocal = [];
+                datosLocal.push(objetoInformacion)
+                localStorage.setItem('key' ,JSON.stringify(datosLocal));
+            }
+               saveUser(objetoInformacion);
     }  
 }
 
@@ -85,6 +127,7 @@ function  saveUser(objetoInformacion){
            .then(data=> console.log(data))
             setTimeout( function() { window.open('http://127.0.0.1:5501/Proyecto%20Final/funciones.html', '_blank'); }, 2500 );
     } catch (error) {
-        console.log(error);
+        alert('Fallo en Conectar con el Servidor');
     }
 }
+

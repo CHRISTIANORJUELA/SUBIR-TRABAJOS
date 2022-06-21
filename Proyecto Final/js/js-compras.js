@@ -1,6 +1,7 @@
+import {mayor,convertir} from "../modules/modulo_funciones/em.js";
 const tablabody = document.getElementById('items_tabla_carrito');
 const templateTbody = document.getElementById('template_tbody');
-const botonCompra = document.querySelector('#button_compra').addEventListener('click',agregarCompra);
+const boton1 =document.querySelector('#button_compra').addEventListener('click',agregarCompra);
 const tablaCompra = document.getElementById('tbody_totalCompras');
 const templateCompra = document.getElementById('templateCompra');
 const tablaCompraFooter = document.getElementById('tfooter');
@@ -8,10 +9,8 @@ const templateFooter = document.getElementById('templateFooter');
 const fragmento = document.createDocumentFragment();
 const fragmentoCompra = document.createDocumentFragment();
 const fragmentoFooter = document.createDocumentFragment();
-
+const boton2 = document.querySelector('#boton-filtrar').addEventListener('click',funcionEnviarBase);
 var base =[];
-var subir_todo_al_template;
-
 function constructor(id,marca,precio,cantidad) {
     this.id = id;
     this.marca = marca;
@@ -19,13 +18,6 @@ function constructor(id,marca,precio,cantidad) {
     this.cantidad = cantidad;
 };
 
-
-if(localStorage.getItem('personas')){
-        personas=JSON.parse(localStorage.getItem("key"));
-    }
-    else{
-        personas=[];
-    }
 div_img_tabla.addEventListener('click',e =>{
   detectarBoton(e);
 });
@@ -51,7 +43,6 @@ const agregarCarrito = objeto =>{
         return false
     }
    })
-
    if(respuesta==true){
     let indice = base.findIndex(item => item.id==id);
     base[indice].cantidad +=1;
@@ -62,16 +53,10 @@ const agregarCarrito = objeto =>{
     carrito = new constructor(id,marca,precio,cantidad);
     base.push(carrito);
    }
-   console.log(base);
    subir_carrito();
 }
  
-
 let subir_carrito = ()=>{
-  let copia = JSON.stringify(base);
-  localStorage.setItem('key', copia );
-  let devolver = localStorage.getItem('key');
-  
   base.forEach(item => {
     tablabody.textContent= "";
     const clone = templateTbody.content.firstElementChild.cloneNode(true);
@@ -106,44 +91,14 @@ function sumar_y_agregar() {
   tablaCompra.appendChild(fragmentoFooter);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let localStorager = () =>{
-// copia = JSON.stringify(base);
-// localStorage.setItem('key', copia );
-// }
-
-
-
-
-// const agregarmarca = () =>{
-//   if(localStorage.getItem('key')){
-//     key=JSON.parse(localStorage.getItem("key"));
-
-// }
-// else{
-//     personas=[];
-// }
-//    subir_carrito = new constructor()
-  
-// }
-// boton.addEventListener("click", agregarmarca);
-
-
-
-
+ function funcionEnviarBase(){
+  let resultado = mayor(base);
+  let NuevoValor = convertir(resultado);
+  console.log(NuevoValor);
+  let textTarea = document.querySelector('#textTarea1');
+  document.getElementById('textTarea1').value = "";
+  NuevoValor.forEach(item =>{
+    document.getElementById('textTarea1').value +=  `Marca: ${item.marca} - Total: ${item.total} \n`
+    textTarea.style.display = 'block';
+  })
+ }

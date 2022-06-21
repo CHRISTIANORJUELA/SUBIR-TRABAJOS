@@ -15,8 +15,6 @@ header{
 main  {
     display: flex;
     justify-content: center;
-    /* align-items: center; 
-    width: 400px; */
     margin-top: 40px;
 }
 
@@ -68,3 +66,42 @@ main .label_titulo{
     font-size: 2rem;
     margin-bottom: 40px;
 }
+
+.button-rocket{
+    position: absolute;
+    top: 18%;
+    left: 61%;
+    background-color: transparent;
+    border: none;
+    transition: .3s ease all;
+}
+
+.button-rocket:hover{
+    color: red;
+    transform:translateX(3px);
+    transform: translateY(-3px);
+}
+
+.div-textTarea1{
+    display: flex;
+    justify-content: center;
+}
+.css-textTarea{
+    margin-top: 70px;
+    width: 25%;
+    display: none;
+    text-align: center;
+    font-family: 'Ropa Sans', sans-serif;
+    background-color:  #E5E5E5;
+}
+
+.css-textTarea2{
+    margin-top: 0px;
+    width: 25%;
+    height: 40px;
+    display: none ;
+    text-align: center;
+    font-family: 'Ropa Sans', sans-serif;
+    background-color:  #E5E5E5;
+}
+

@@ -14,7 +14,19 @@
 </head>
 <body>
     <header class="">
-        <h1 class="titulo-principal">Buscar Productos</h1>
+        <div class="div-funciones-botones-1">
+            <h1 class="titulo-principal">Compras</h1>
+            <button  class="boton-funciones-1 funcion-general" id="boton-filtrar">
+            <span class="material-symbols-outlined">
+            pageview
+            </span>Filtrar</button>
+        </div>
+        <!-- <div class="div-funciones-botones-2">
+            <button  class="boton-funcion-2 funcion-general">
+            <span class="material-symbols-outlined">
+            pageview
+            </span>Filtrar</button>
+        </div> -->
         <div>
             <img src="imagenes/tres-carros.jpeg" alt="" class="imagen-cabecera">
         </div>
@@ -144,6 +156,10 @@
         </template>
     </main>
 
+    <div class="div-textTarea1">
+        <textarea name="" id="textTarea1" cols="30" rows="10" class="css-textTarea"></textarea>
+    </div>
+
     <div class="div_total_compras">
         <table class="tabla_total_carrito">
             <thead>
@@ -170,6 +186,6 @@
         </tr>
     </template>
 
-    <script src="js/js-compras.js"></script>
+    <script src="js/js-compras.js" type="module"></script>
 </body>
 </html>

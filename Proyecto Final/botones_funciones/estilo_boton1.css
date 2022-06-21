@@ -1,0 +1,23 @@
+body{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Anek Latin', sans-serif;
+    background-color: rgb(20, 203, 203);
+}
+
+.div-dialogo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main form {
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    margin-top: 80px;
+}
