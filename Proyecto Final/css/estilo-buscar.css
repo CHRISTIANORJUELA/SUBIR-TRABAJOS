@@ -193,7 +193,10 @@ justify-content: center;
     margin-top: 100px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    padding-bottom: 40px;
 }
 
 .tabla_total_carrito{
@@ -235,4 +238,16 @@ justify-content: center;
     display: none;
     text-align: center;
     font-family: 'Ropa Sans', sans-serif;
+}
+
+.div_mensaje_compra_exitosa{
+    display: flex;
+    justify-content: center;
+}
+
+.mensaje_compra_exitosa{
+    font-weight: 500;
+    font-size: 1.5rem;
+    color:rgb(15, 246, 15);
+    display: none;
 }

@@ -89,6 +89,9 @@ function sumar_y_agregar() {
   cloneTol.querySelectorAll('td')[0].textContent = suma;
   fragmentoFooter.appendChild(cloneTol);
   tablaCompra.appendChild(fragmentoFooter);
+  if(suma != 0){
+    document.getElementById('mensaje_compra_exitosa').style.display ='block';
+  }
 }
 
  function funcionEnviarBase(){
