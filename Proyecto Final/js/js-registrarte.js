@@ -4,14 +4,12 @@ const btnRocket = document.querySelector('#rocket').addEventListener('click',mos
 const url = "https://629faf73461f8173e4ef0b80.mockapi.io/FACTUR/A/Factura";
 const objetoSubirBase = [];
 
-
 function input1letras(e) {
     key=e.keyCode || e.which;
     teclado=String.fromCharCode(key).toLowerCase();
     letras = "abcdefghijklmnñopqrstuvwxyz";
     especiales = "8-37-38-46-164";
     teclado_especial=false;
-   
     for(let i in especiales){
        if(key==especiales[i]){
            teclado_especial_=true;break;
@@ -28,13 +26,11 @@ function inputNumeros(e) {
     numeros = "0123456789";
     especiales = "8-37-38-46-164";
     teclado_especial=false;
-   
     for(let i in especiales){
        if(key==especiales[i]){
            teclado_especial_=true;break;
        }
     }
-
     if(numeros.indexOf(teclado) == -1 && !teclado_especial){
        return false
     }
@@ -48,7 +44,6 @@ function mostrarNombres() {
                 Nombre: item.Nombre
             }
         })
-
         var posicion1 = Object.values(devuelto).findIndex(item => {
             if(item.TarjetaDeCredito == 9994445 ){
                return `${item.Nombre} eres el administrador`
@@ -56,19 +51,21 @@ function mostrarNombres() {
                 return false
             }
         });
-        
+        imprimirLocalStorage(posicion1,nombre,devuelto)
+    }
+}
+
+function imprimirLocalStorage(posicion1,nombre,devuelto) {
+    if(posicion1 != -1 && posicion1 != undefined){
         document.getElementById('textTarea2').value = "";
         document.getElementById('textTarea2').value = `El administrador es : ${devuelto[posicion1].Nombre}`;
         document.getElementById('textTarea2').style.display = 'block'
-        
-        console.log(nombre);
-        document.getElementById('textTarea1').value = "";
-        nombre.forEach((item) =>{
-            document.getElementById('textTarea1').style.display = 'block'
-            document.getElementById('textTarea1').value+= `${item.Nombre} \n`
-            document.getElementById('textTarea1').style.display = 'block'
-        })
     }
+    document.getElementById('textTarea1').value = "";
+    nombre.forEach((item) =>{
+        document.getElementById('textTarea1').value+= `${item.Nombre} \n`
+        document.getElementById('textTarea1').style.display = 'block'
+    })
 }
 
 async function validar() {

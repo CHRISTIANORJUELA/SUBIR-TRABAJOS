@@ -1,12 +1,12 @@
 const url = 'https://629faf73461f8173e4ef0b80.mockapi.io/FACTUR/A/Factura';
 const boton = document.querySelector('#id_btn').addEventListener("click",comprobar_primero);
+
 function input1letras(e) {
     key=e.keyCode || e.which;
     teclado=String.fromCharCode(key).toLowerCase();
     letras = "abcdefghijklmnñopqrstuvwxyz";
     especiales = "8-37-38-46-164";
     teclado_especial=false;
-   
     for(let i in especiales){
        if(key==especiales[i]){
            teclado_especial_=true;break;
@@ -23,13 +23,11 @@ function inputNumeros(e) {
     numeros = "0123456789";
     especiales = "8-37-38-46-164";
     teclado_especial=false;
-   
     for(let i in especiales){
        if(key==especiales[i]){
            teclado_especial_=true;break;
        }
     }
-
     if(numeros.indexOf(teclado) == -1 && !teclado_especial){
        return false
     }
@@ -57,7 +55,7 @@ async function api(tarjetaCreditos,telefonos) {
         post = await res.json();
         comparar(post,tarjetaCreditos,telefonos)
     } catch (error) {
-        
+        alert('Error en conectar al servidor');
     }
 }
 
